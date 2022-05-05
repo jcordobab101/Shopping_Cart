@@ -2,7 +2,7 @@
 const products = [
   { name: "Apples_:", country: "Italy", cost: 3, instock: 10 },
   { name: "Oranges:", country: "Spain", cost: 4, instock: 3 },
-  { name: "Beans:", country: "USA", cost: 2, instock: 5 },
+  { name: "Beans__:", country: "USA", cost: 2, instock: 5 },
   { name: "Cabbage:", country: "USA", cost: 1, instock: 8 },
 ];
 //=========Cart=============
@@ -92,7 +92,7 @@ const Products = (props) => {
   } = ReactBootstrap;
   //  Fetch Data
   const { Fragment, useState, useEffect, useReducer } = React;
-  const [query, setQuery] = useState("https://cartdb.herokuapp.com/api/Products");
+  const [query, setQuery] = useState("");
   const [{ data, isLoading, isError }, doFetch] = useDataApi(
     "https://cartdb.herokuapp.com/api/Products",
     {
@@ -112,7 +112,7 @@ const Products = (props) => {
     let newCart = cart.filter((item, i) => index != i);
     setCart(newCart);
   };
-  const photos = ["guava.png","apple.png", "orange.png", "beans.png", "cabbage.png","watermelon.png"];
+  const photos = ["apple.png", "orange.png", "beans.png", "cabbage.png"];
 
   let list = items.map((item, index) => {
     //let n = index + 1049;
@@ -196,7 +196,7 @@ const Products = (props) => {
       <Row>
         <form
           onSubmit={(event) => {
-            restockProducts(`http://localhost:1337/${query}`);
+            restockProducts(`https://cartdb.herokuapp.com/api/${query}`);
             console.log(`Restock called on ${query}`);
             event.preventDefault();
           }}
