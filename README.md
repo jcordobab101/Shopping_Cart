@@ -1,4 +1,6 @@
-**Build Restocking Functionality**
+<h2>Build Restocking Functionality</h2>
+
+<p>The Strapi REST library Products has been built in heroku for public availability and to support other projects.</p>
 
 
 <ul>
